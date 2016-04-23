@@ -1,11 +1,11 @@
 function NathansToggleComment()
 	let l = line(".")
 	let c = col(".")
-  let line = getline(".")
-  let firstchar = strpart(line, 0, 1)
-  normal 0
-  if firstchar == "#"
+  normal ^
+  let thischar = matchstr(getline('.'), '\%' . col('.') . 'c.')
+  if thischar == "#"
     normal x
+    let c = c - 1
   else
     normal I#
     let c = c + 1

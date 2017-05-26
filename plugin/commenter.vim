@@ -2,6 +2,10 @@ if !exists("g:commenter_char")
   let g:commenter_char = "#"
 endif
 
+if !exists("g:commenter_move_on")
+  let g:commenter_move_on = 1
+endif
+
 function NathansToggleComment()
 	let l = line(".")
 	let c = col(".")
@@ -14,7 +18,7 @@ function NathansToggleComment()
     normal I=g:commenter_char
     let c = c + 1
   endif
-	call cursor(l, c)
+	call cursor(l + g:commenter_move_on, c)
 endfunction
 
 nnoremap <silent> # :call NathansToggleComment()<CR>

@@ -1,3 +1,17 @@
 Clone into to your pathogen bundle
 
-In the future, setting the char will be added
+Now supports setting a single char for comments, # by default.
+
+let g:commenter_char = "#"
+let g:commenter_char = '"'
+
+Now supports moving, 1 line down by default.
+
+let g:commenter_move_on = 1
+let g:commenter_move_on = 0
+let g:commenter_move_on = -1
+
+Todo:
+
+Multichar comment, eg "//"
+Visual commenting
